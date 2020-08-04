@@ -46,11 +46,11 @@ set_status_right_value() {
 
     # Add auto dark mode command.
     CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-    local status_line_command="#($CURRENT_DIR/auto-dark-mode.sh)"
+    local adm_command="#($CURRENT_DIR/auto-dark-mode.sh)"
     # Check that the command is not already added.
-    if ! [[ "$status_right_value" == *"$status_line_command"* ]] ; then
+    if ! [[ "$status_right_value" == *"$adm_command"* ]] ; then
         # Prepend the command to the status line.
-        status_right_value="${status_line_command}${status_right_value}"
+        status_right_value="${adm_command}${status_right_value}"
     fi
 
     # Set status-right value.
@@ -58,22 +58,26 @@ set_status_right_value() {
 }
 
 change_iterm_color() {
-    if [[ "$(get_tmux_option "@adm-iterm" "")" == "on" ]] ; then
-        # Change iTerm color preset.
-        osascript -e "tell app \"System Events\" to keystroke \"$1\" using {shift down, option down, command down}"
-    fi
+    # Change iTerm color preset.
+    osascript -e "tell app \"System Events\" to keystroke \"$1\" using {control down, shift down, option down, command down}"
 }
 
 set_dark_mode() {
     # Change status line to dark style.
     set_status_right_value "$(get_tmux_option "@adm-status-dark" "")"
     set_tmux_option "@adm-current-mode" "dark"
-    change_iterm_color "d"
+    # If option "adm-iterm" is set, change iTerm color preset.
+    if [[ "$(get_tmux_option "@adm-iterm" "")" == "on" ]] ; then
+        change_iterm_color "d"
+    fi
 }
 
 set_light_mode() {
     # Change status line to light style.
     set_status_right_value "$(get_tmux_option "@adm-status-light" "")"
     set_tmux_option "@adm-current-mode" "light"
-    change_iterm_color "l"
+    # If option "adm-iterm" is set, change iTerm color preset.
+    if [[ "$(get_tmux_option "@adm-iterm" "")" == "on" ]] ; then
+        change_iterm_color "l"
+    fi
 }

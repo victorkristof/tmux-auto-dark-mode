@@ -31,8 +31,6 @@ set_status_line_style() {
         set_dark_mode
     elif [[ $new_mode == "light" && $current_mode == "dark" ]] ; then
         set_light_mode
-    # else
-        # Do nothing.
     fi
 }
 set_status_line_style
