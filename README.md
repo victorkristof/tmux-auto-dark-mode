@@ -27,7 +27,7 @@ You can test it by turning on macOS Dark Mode (from System Preferences -> Genera
 
 Clone the repo:
 ```
-git@github.com:victorkristof/tmux-auto-dark-mode.git ~/to/path
+git clone git@github.com:victorkristof/tmux-auto-dark-mode.git ~/to/path
 ```
 
 Add this line to your `tmux.conf`:
@@ -68,3 +68,8 @@ I chose them in order to reduce the probability of conflict with general mapping
 ```
 set -g @adm-iterm 'on'
 ```
+
+## Requirements
+
+- macOS Catalina (10.15)
+- tmux 3.1 or above (not tested on earlier versions)
