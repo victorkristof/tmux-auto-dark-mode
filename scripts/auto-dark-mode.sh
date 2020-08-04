@@ -15,7 +15,7 @@ get_system_mode() {
 }
 
 set_status_line_style() {
-    local current_mode="$(get_tmux_option "@current-mode" "")"
+    local current_mode="$(get_tmux_option "@adm-current-mode" "")"
     local new_mode="$(get_system_mode)"
     # The first time this script is run, we don't which mode is enabled.
     if [[ $current_mode == "" ]] ; then

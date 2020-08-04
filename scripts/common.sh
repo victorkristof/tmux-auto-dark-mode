@@ -58,7 +58,7 @@ set_status_right_value() {
 }
 
 change_iterm_color() {
-    if [[ "$(get_tmux_option "@iterm" "")" == "on" ]] ; then
+    if [[ "$(get_tmux_option "@adm-iterm" "")" == "on" ]] ; then
         # Change iTerm color preset.
         osascript -e "tell app \"System Events\" to keystroke \"$1\" using {shift down, option down, command down}"
     fi
@@ -66,14 +66,14 @@ change_iterm_color() {
 
 set_dark_mode() {
     # Change status line to dark style.
-    set_status_right_value "$(get_tmux_option "@status-line-dark" "")"
-    set_tmux_option "@current-mode" "dark"
+    set_status_right_value "$(get_tmux_option "@adm-status-dark" "")"
+    set_tmux_option "@adm-current-mode" "dark"
     change_iterm_color "d"
 }
 
 set_light_mode() {
     # Change status line to light style.
-    set_status_right_value "$(get_tmux_option "@status-line-light" "")"
-    set_tmux_option "@current-mode" "light"
+    set_status_right_value "$(get_tmux_option "@adm-status-light" "")"
+    set_tmux_option "@adm-current-mode" "light"
     change_iterm_color "l"
 }

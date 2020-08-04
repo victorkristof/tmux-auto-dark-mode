@@ -4,9 +4,9 @@
 # set -x
 
 # Set options.
-tmux set-option -gq @status-line-dark  "/Users/kristof/.dotfiles/tmux-status-line-dark.conf"
-tmux set-option -gq @status-line-light "/Users/kristof/.dotfiles/tmux-status-line-light.conf"
-tmux set-option -gq @iterm "on"
+tmux set-option -g @adm-status-dark  "/Users/kristof/.dotfiles/tmux-status-line-dark.conf"
+tmux set-option -g @adm-status-light "/Users/kristof/.dotfiles/tmux-status-line-light.conf"
+tmux set-option -g @adm-iterm "on"
 
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source "$CURRENT_DIR/scripts/common.sh"
@@ -18,7 +18,7 @@ main() {
     # Tmux updates its status line every 15 seconds by default,
     # which enables to check the system interface style and adapts
     # the status line accordingly by adding a script to the status line.
-    set_tmux_option "@dark-mode" ""
+    set_tmux_option "@adm-dark-mode" ""
     set_status_right_value
 }
 main
