@@ -12,12 +12,12 @@
 
 Add this line to your `tmux.conf`:
 ```
-set -g @plugin 'victorkristof/tmux-auto-dark-mode'
-set -g @adm-dark-status '/path/to/dark-status.conf'
-set -g @adm-light-status '/path/to/light-status.conf'
+set-option -g @plugin 'victorkristof/tmux-auto-dark-mode'
+set-option -g @adm-dark-status '/path/to/dark-status.conf'
+set-option -g @adm-light-status '/path/to/light-status.conf'
 ```
 
-**Note for [tmux-continuum](https://github.com/tmux-plugins/tmux-continuum) users:** Make sure to add the above line **after** `set -g @plugin 'tmux-plugins/tmux-continuum'`.
+**Note for [tmux-continuum](https://github.com/tmux-plugins/tmux-continuum) users:** Make sure to add the above line **after** `set-option -g @plugin 'tmux-plugins/tmux-continuum'`.
 
 Hit <kbd>prefix</kbd><kbd>I</kbd> to fetch the plugin and source it.
 The plugin will automatically start in the background.
@@ -33,8 +33,8 @@ git clone git@github.com:victorkristof/tmux-auto-dark-mode.git ~/to/path
 Add this line to your `tmux.conf`:
 ```
 run-shell ~/to/path/dark-mode.tmux
-set -g @adm-dark-status '/path/to/dark-status.conf'
-set -g @adm-light-status '/path/to/light-status.conf'
+set-option -g @adm-dark-status '/path/to/dark-status.conf'
+set-option -g @adm-light-status '/path/to/light-status.conf'
 ```
 
 Source your tmux config by running:
@@ -66,7 +66,7 @@ I chose them in order to reduce the probability of conflict with general mapping
 **3. Add this line your your `tmux.conf`**
 
 ```
-set -g @adm-iterm 'on'
+set-option -g @adm-iterm 'on'
 ```
 
 ## Requirements
