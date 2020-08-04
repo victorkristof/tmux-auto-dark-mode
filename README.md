@@ -10,7 +10,7 @@
 
 ### [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm) (recommended)
 
-Add this line to your `tmux.conf`:
+Add these lines to your `tmux.conf`:
 ```
 set-option -g @plugin 'victorkristof/tmux-auto-dark-mode'
 set-option -g @adm-dark-status '/path/to/dark-status.conf'
@@ -22,6 +22,7 @@ set-option -g @adm-light-status '/path/to/light-status.conf'
 Hit <kbd>prefix</kbd><kbd>I</kbd> to fetch the plugin and source it.
 The plugin will automatically start in the background.
 You can test it by turning on macOS Dark Mode (from System Preferences -> General -> Appearance -> Dark).
+There might be a slight delay, as tmux-auto-dark-mode relies on tmux update interval which defaults to 15 seconds (check `tmux show-options -gqv "status-interval"`).
 
 ### Manual Installation
 
@@ -44,6 +45,7 @@ tmux source-file ~/.tmux.conf
 
 The plugin will automatically start in the background.
 You can test it by turning on macOS Dark Mode (from System Preferences -> General -> Appearance -> Dark).
+There might be a slight delay, as tmux-auto-dark-mode relies on tmux update interval which defaults to 15 seconds (check `tmux show-options -gqv "status-interval"`).
 
 ## Automatically Switch iTerm2 Color Preset
 
