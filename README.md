@@ -1,8 +1,10 @@
 # tmux-auto-dark-mode
 
+Automatically switch tmux to dark mode at night (for macOS).
+
 ## Features
 
-- Automatically switch tmux status line to a dark styling when macOS enables Dark Mode
+- Automatically switch tmux (status line) to a dark styling when macOS enables Dark Mode
 - Optionally switch iTerm2 to a dark color preset simultaneously
 - Switch back to light status line at day time
 
